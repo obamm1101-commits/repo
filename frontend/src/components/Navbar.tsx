@@ -16,6 +16,11 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
 
+  // Sembunyikan navbar publik pada semua halaman admin
+  if (pathname.startsWith("/admin")) {
+    return null;
+  }
+
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/5 bg-[#080b14]/80 px-6 py-4 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
@@ -48,7 +53,9 @@ export default function Navbar() {
                 {/* Active indicator */}
                 <span
                   className={`absolute bottom-0 left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-indigo-400 transition-all duration-300 ${
-                    isActive ? "w-5 opacity-100" : "w-0 opacity-0"
+                    isActive
+                      ? "w-5 opacity-100"
+                      : "w-0 opacity-0"
                   }`}
                 />
               </Link>

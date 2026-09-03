@@ -1,18 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { getSkills, SkillGroup } from "../../mockData";
+import { fetchSkills, SkillGroup } from "@/data/api";
 
 export default function SkillsPage() {
   const [skillGroupsList, setSkillGroupsList] = useState<SkillGroup[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchSkills() {
+    async function loadSkills() {
       try {
         setLoading(true);
 
-        const data = await getSkills();
+        const data = await fetchSkills();
 
         setSkillGroupsList(data);
       } catch (error) {
@@ -22,7 +22,7 @@ export default function SkillsPage() {
       }
     }
 
-    fetchSkills();
+    loadSkills();
   }, []);
 
   return (

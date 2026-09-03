@@ -41,40 +41,81 @@ export interface Testimonial {
 }
 
 
+// =========================
+// PROJECTS
+// =========================
+
 const projects: Project[] = [
   {
     id: 1,
-    title: "RingKita - Mobile Attendance & Session Tracker",
-    category: "Mobile App",
+    title: "SIJA App",
+    category: "Web Dev",
     description:
-      "Aplikasi absensi berbasis mobile untuk pelacakan otomatis sisa sesi latihan member, pencatatan kehadiran, serta fitur pembelian paket latihan secara langsung.",
-    tech: ["React Native", "Expo", "Node.js", "Express.js", "MySQL"],
+      "SIJA App adalah aplikasi kasir sederhana yang dirancang untuk membantu mengelola produk, transaksi penjualan, stok barang, dan data penjualan dalam satu sistem.",
+    tech: ["Next.js", "Node.js", "Express.js", "MySQL"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/obamm1101-commits/sijja-app",
     image: "/portofolio.jpg",
-  }
+  },
 ];
 
+
+// =========================
+// SKILLS
+// =========================
 
 const skillGroups: SkillGroup[] = [
   {
     title: "Frontend Development",
     icon: "💻",
     skills: [
-      { name: "HTML5 / CSS3", level: "Intermediate", percentage: 75 },
-      { name: "JavaScript (ES6+)", level: "Intermediate", percentage: 70 },
-      { name: "React.js", level: "Beginner", percentage: 55 },
-      { name: "Next.js (App Router)", level: "Beginner", percentage: 50 },
-      { name: "Tailwind CSS", level: "Intermediate", percentage: 70 },
+      {
+        name: "HTML5 / CSS3",
+        level: "Intermediate",
+        percentage: 75,
+      },
+      {
+        name: "JavaScript (ES6+)",
+        level: "Intermediate",
+        percentage: 70,
+      },
+      {
+        name: "React.js",
+        level: "Beginner",
+        percentage: 55,
+      },
+      {
+        name: "Next.js (App Router)",
+        level: "Beginner",
+        percentage: 50,
+      },
+      {
+        name: "Tailwind CSS",
+        level: "Intermediate",
+        percentage: 70,
+      },
     ],
   },
+
   {
     title: "Backend & Database",
     icon: "⚙️",
     skills: [
-      { name: "Node.js", level: "Beginner", percentage: 55 },
-      { name: "Express.js", level: "Intermediate", percentage: 60 },
-      { name: "MySQL", level: "Intermediate", percentage: 65 },
+      {
+        name: "Node.js",
+        level: "Beginner",
+        percentage: 55,
+      },
+      {
+        name: "Express.js",
+        level: "Intermediate",
+        percentage: 60,
+      },
+      {
+        name: "MySQL",
+        level: "Intermediate",
+        percentage: 65,
+      },
       {
         name: "RESTful API Development",
         level: "Intermediate",
@@ -82,18 +123,39 @@ const skillGroups: SkillGroup[] = [
       },
     ],
   },
+
   {
     title: "Tools & Platforms",
     icon: "🛠️",
     skills: [
-      { name: "Git & GitHub", level: "Intermediate", percentage: 70 },
-      { name: "Figma (UI/UX)", level: "Intermediate", percentage: 60 },
-      { name: "Postman", level: "Intermediate", percentage: 65 },
-      { name: "VS Code", level: "Intermediate", percentage: 80 },
+      {
+        name: "Git & GitHub",
+        level: "Intermediate",
+        percentage: 70,
+      },
+      {
+        name: "Figma (UI/UX)",
+        level: "Intermediate",
+        percentage: 60,
+      },
+      {
+        name: "Postman",
+        level: "Intermediate",
+        percentage: 65,
+      },
+      {
+        name: "VS Code",
+        level: "Intermediate",
+        percentage: 80,
+      },
     ],
   },
 ];
 
+
+// =========================
+// CERTIFICATES
+// =========================
 
 const certificates: Certificate[] = [
   {
@@ -105,6 +167,7 @@ const certificates: Certificate[] = [
     verificationUrl:
       "https://www.netacad.com/certificates/?issuanceId=6ac482e2-0c92-4bab-94cb-6adc2f1ead08",
   },
+
   {
     id: 2,
     title: "Belajar Membuat Aplikasi Back-End Pemula",
@@ -113,6 +176,7 @@ const certificates: Certificate[] = [
     credentialId: "DICODING-208173",
     verificationUrl: "#",
   },
+
   {
     id: 3,
     title: "Responsive Web Design",
@@ -121,6 +185,7 @@ const certificates: Certificate[] = [
     credentialId: "FCC-RESPONSIVE-WD",
     verificationUrl: "#",
   },
+
   {
     id: 4,
     title: "JavaScript Algorithms and Data Structures",
@@ -129,6 +194,7 @@ const certificates: Certificate[] = [
     credentialId: "FCC-JS-ALGO",
     verificationUrl: "#",
   },
+
   {
     id: 5,
     title: "Junior Web Developer",
@@ -140,56 +206,109 @@ const certificates: Certificate[] = [
 ];
 
 
+// =========================
+// TESTIMONIALS
+// =========================
+
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Drs. Eko Prasetyo",
-    role: "Kepala Jurusan RPL",
-    company: "SMK Negeri 1",
-    avatar: "👤",
+    name: "Muhammad Saad",
+    role: "Kepala Sekolah",
+    company: "SMK Telkom Makassar",
+    avatar: "👨‍🏫",
     stars: 5,
     quote:
-      "Fatih menunjukkan performa luar biasa dalam setiap tugas dan proyek sekolah. Dia selalu menjadi leader dalam team project karena inisiatif dan skill.",
+      "Akram menunjukkan semangat belajar yang baik dan memiliki ketertarikan yang kuat dalam bidang teknologi serta pengembangan aplikasi.",
   },
+
   {
     id: 2,
-    name: "Rian Ardiansyah",
-    role: "Teman Sekelas / Ketua Kelas",
-    company: "XII RPL 1",
+    name: "Ali Akbar",
+    role: "Kepala Sekolah Sarpras",
+    company: "SMK Telkom Makassar",
+    avatar: "👨‍🏫",
+    stars: 5,
+    quote:
+      "Akram memiliki kemauan untuk terus belajar dan mengembangkan kemampuan dalam bidang teknologi serta mampu bekerja sama dengan baik dalam berbagai kegiatan.",
+  },
+
+  {
+    id: 3,
+    name: "Farid Mawardi",
+    role: "Kaprodi RPL",
+    company: "SMK Telkom Makassar",
     avatar: "👨‍💻",
     stars: 5,
     quote:
-      "Belajar kelompok bareng Fatih selalu asik. Dia pintar menjelaskan konsep pemrograman yang susah dengan bahasa yang gampang dimengerti oleh teman sekelas.",
+      "Akram memiliki ketertarikan yang baik terhadap pemrograman dan terus berusaha meningkatkan kemampuan dalam pengembangan aplikasi dan website.",
   },
+
   {
-    id: 3,
-    name: "Siti Rahmawati",
-    role: "Guru Produktif Web & Mobile",
-    company: "SMK Negeri 1",
-    avatar: "👩‍🏫",
+    id: 4,
+    name: "Alif Anhar",
+    role: "Guru Produktif RPL",
+    company: "SMK Telkom Makassar",
+    avatar: "👨‍🏫",
     stars: 5,
     quote:
-      "Pemahaman Fatih terhadap framework Next.js dan Tailwind CSS v4 di usianya sekarang sangat mengagumkan. Proyek-proyeknya dikerjakan dengan sangat rapi.",
+      "Akram cukup aktif dalam mempelajari teknologi web dan menunjukkan perkembangan yang baik dalam mengerjakan tugas serta proyek pemrograman.",
+  },
+
+  {
+    id: 5,
+    name: "Oktavian",
+    role: "Guru Produktif RPL",
+    company: "SMK Telkom Makassar",
+    avatar: "👨‍🏫",
+    stars: 5,
+    quote:
+      "Akram memiliki semangat belajar yang baik dan terus berusaha mengembangkan kemampuan teknisnya dalam bidang Rekayasa Perangkat Lunak.",
   },
 ];
 
+
+// =========================
+// DELAY
+// =========================
+
 const delay = (ms: number) =>
   new Promise((resolve) => setTimeout(resolve, ms));
+
+
+// =========================
+// GET PROJECTS
+// =========================
 
 export async function getProjects(): Promise<Project[]> {
   await delay(1200);
   return projects;
 }
 
+
+// =========================
+// GET SKILLS
+// =========================
+
 export async function getSkills(): Promise<SkillGroup[]> {
   await delay(1000);
   return skillGroups;
 }
 
+
+// =========================
+// GET CERTIFICATES
+// =========================
+
 export async function getCertificates(): Promise<Certificate[]> {
   await delay(1200);
   return certificates;
 }
+
+
+// =========================
+// GET TESTIMONIALS
+// =========================
 
 export async function getTestimonials(): Promise<Testimonial[]> {
   await delay(800);

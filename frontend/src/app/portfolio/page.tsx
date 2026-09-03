@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-// Menggunakan import dari src/mockData.ts
-import { getProjects, Project } from "../../mockData";
+import { fetchProjects, Project } from "@/data/api";
 import SkeletonCard from "@/components/SkeletonCard";
 import Image from "next/image";
 
@@ -12,10 +11,12 @@ export default function PortfolioPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
-    async function fetchProjects() {
+    async function loadProjects() {
       try {
         setLoading(true);
-        const data = await getProjects();
+
+        const data = await fetchProjects();
+
         setProjectsList(data);
       } catch (error) {
         console.error("Failed to fetch projects:", error);
@@ -23,7 +24,8 @@ export default function PortfolioPage() {
         setLoading(false);
       }
     }
-    fetchProjects();
+
+    loadProjects();
   }, []);
 
   const categories = ["All", "Web Dev", "Mobile App", "UI/UX"];
@@ -31,11 +33,14 @@ export default function PortfolioPage() {
   const filteredProjects =
     selectedCategory === "All"
       ? projectsList
-      : projectsList.filter((project) => project.category === selectedCategory);
+      : projectsList.filter(
+          (project) => project.category === selectedCategory
+        );
 
   return (
     <section className="py-16 sm:py-20 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
@@ -44,8 +49,10 @@ export default function PortfolioPage() {
               Portfolio
             </span>
           </h1>
+
           <p className="text-gray-400 max-w-xl mx-auto">
-            Kumpulan proyek terbaik yang telah saya kerjakan, mencakup web development, mobile apps, dan desain UI/UX.
+            Kumpulan proyek terbaik yang telah saya kerjakan, mencakup web
+            development, mobile apps, dan desain UI/UX.
           </p>
         </div>
 
@@ -72,6 +79,12 @@ export default function PortfolioPage() {
             Array.from({ length: 3 }).map((_, i) => (
               <SkeletonCard key={i} variant="project" />
             ))
+          ) : filteredProjects.length === 0 ? (
+            <div className="col-span-full text-center py-16">
+              <p className="text-gray-500">
+                Belum ada project pada kategori ini.
+              </p>
+            </div>
           ) : (
             filteredProjects.map((project) => (
               <div
@@ -94,9 +107,11 @@ export default function PortfolioPage() {
                     <span className="text-xs font-bold uppercase tracking-wider text-indigo-400">
                       {project.category}
                     </span>
+
                     <h3 className="text-xl font-bold text-white mt-2 mb-3 group-hover:text-indigo-400 transition-colors duration-300">
                       {project.title}
                     </h3>
+
                     <p className="text-gray-400 text-sm mb-6 line-clamp-3">
                       {project.description}
                     </p>
@@ -123,6 +138,7 @@ export default function PortfolioPage() {
                   >
                     Live Demo ↗
                   </a>
+
                   <a
                     href={project.githubUrl}
                     target="_blank"

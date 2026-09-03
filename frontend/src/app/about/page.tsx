@@ -41,7 +41,7 @@ export default function About() {
 
               <Image
                 src="/profile.jpg"
-                alt="Foto profil Muh Fatih Ataillah"
+                alt="Foto profil Akram Rheza"
                 fill
                 priority
                 className="object-cover"
@@ -60,7 +60,7 @@ export default function About() {
                 </span>
 
                 <span className="text-right text-sm font-semibold">
-                  Muh Fatih Ataillah
+                  Akram Rheza
                 </span>
               </div>
 
@@ -176,7 +176,9 @@ export default function About() {
 
             <div className="relative border-l border-slate-700 pl-8">
 
-              {/* Titik Timeline */}
+              {/* =========================
+                  SMK
+              ========================== */}
               <div className="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-indigo-500" />
 
               <div className="rounded-xl border border-slate-800 bg-[#0d1320] p-6">
@@ -193,6 +195,32 @@ export default function About() {
                   Mempelajari pemrograman web, mobile, dan desktop.
                   Fokus pada pengembangan aplikasi dan website.
                 </p>
+
+              </div>
+
+              {/* =========================
+                  SMP
+              ========================== */}
+              <div className="relative mt-6">
+
+                <div className="absolute -left-[37px] top-1 h-2.5 w-2.5 rounded-full bg-indigo-500" />
+
+                <div className="rounded-xl border border-slate-800 bg-[#0d1320] p-6">
+
+                  <p className="text-xs text-slate-500">
+                    Sebelumnya
+                  </p>
+
+                  <h3 className="mt-2 text-lg font-bold">
+                    SMP 31 Makassar
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-6 text-slate-400">
+                    Menempuh pendidikan tingkat sekolah menengah
+                    pertama di SMP 31 Makassar.
+                  </p>
+
+                </div>
 
               </div>
 

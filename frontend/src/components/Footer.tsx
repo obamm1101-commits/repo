@@ -1,3 +1,8 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 const quickLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
@@ -24,6 +29,13 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  // Sembunyikan footer publik pada halaman admin
+  if (pathname.startsWith("/admin")) {
+    return null;
+  }
+
   return (
     <footer className="border-t border-white/5 bg-[#080b14] px-6 pt-16 pb-6">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 md:grid-cols-3">
@@ -47,12 +59,12 @@ export default function Footer() {
           <ul className="space-y-2">
             {quickLinks.map((link) => (
               <li key={link.name}>
-                <a
+                <Link
                   href={link.href}
                   className="text-sm text-gray-400 transition hover:text-indigo-300"
                 >
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -77,6 +89,16 @@ export default function Footer() {
               </li>
             ))}
           </ul>
+
+          {/* Link Admin */}
+          <div className="mt-6">
+            <Link
+              href="/admin"
+              className="text-xs text-gray-600 transition hover:text-indigo-400"
+            >
+              Admin Panel
+            </Link>
+          </div>
         </div>
       </div>
 
